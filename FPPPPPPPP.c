@@ -1,4 +1,4 @@
-#include <stdio.h>
+a#include <stdio.h>
 #include <stdbool.h>
 
 char board[3][3];
@@ -176,8 +176,12 @@ int main() {
             gameOver = true;
         }
 
-        currentPlayer = (currentPlayer == 1) ? 2 : 1;
-        currentSymbol = (currentSymbol == 'X') ? 'O' : 'X';
+       if (currentPlayer == 1) {
+    currentPlayer = 2;
+} else {
+    currentPlayer = 1;
+}
+
     }
 
     printf("Game selesai!\n");
