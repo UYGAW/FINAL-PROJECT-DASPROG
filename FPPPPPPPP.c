@@ -1,4 +1,4 @@
-a#include <stdio.h>
+#include <stdio.h>
 #include <stdbool.h>
 
 char board[3][3];
@@ -157,6 +157,7 @@ int main() {
 
     while (!gameOver) {
         printBoard();
+
         if (mode == 1 || currentPlayer == 1) {
             playerMove(currentPlayer, currentSymbol);
         } else {
@@ -176,12 +177,18 @@ int main() {
             gameOver = true;
         }
 
-       if (currentPlayer == 1) {
-    currentPlayer = 2;
-} else {
-    currentPlayer = 1;
-}
+        
+        if (currentPlayer == 1) {
+            currentPlayer = 2;
+        } else {
+            currentPlayer = 1;
+        }
 
+        if (currentSymbol == 'X') {
+            currentSymbol = 'O';
+        } else {
+            currentSymbol = 'X';
+        }
     }
 
     printf("Game selesai!\n");
